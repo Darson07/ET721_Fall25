@@ -5,6 +5,7 @@ Lab #8: Unit Testing
 '''
 import unittest
 import calculations
+from bankaccount import *
 
 # Function to add and return the sum of two numbers
 def addtwonumbers(a,b):
@@ -31,6 +32,32 @@ class TestCalculation(unittest.TestCase):
         self.assertAlmostEqual(calculations.dividetwonumbers(9,2),4.5)
         self.assertEqual(calculations.dividetwonumbers(9,0),-1)
         self.assertIsNone(calculations.multiplythreenumbers("a",2))
+
+print("\n----- Lab #8 Lab -----")
+class TestBankAccount(unittest.TestCase):
+    def setUp(self):
+        self.account = BankAccount(owner = "Darson", balance = 100)
+
+    def test_initial(self):
+        self.assertEqual(self.account.get_balance(), 100)
+
+    def test_deposit(self):
+        self.account.deposit(50)
+        self.assertEqual(self.account.get_balance(), 150)
+
+    def test_withdraw(self):
+        self.account.withdraw(30)
+        self.assertEqual(self.account.get_balance(), 70)
+
+    def test_withdraw_more(self):
+        self.assertRaises(ValueError, self.account.withdraw, 200)
+
+    def test_sequence_of_transactions(self):
+        self.account.deposit(100)
+        self.account.withdraw(50)
+        self.account.deposit(25)
+        self.account.withdraw(75)
+        self.assertEqual(self.account.get_balance(), 100)
 
 if __name__ == "__main__":
     unittest.main()
