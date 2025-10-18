@@ -59,17 +59,41 @@ class TestFileOperations(unittest.TestCase):
     
     # LAB EXERCISE
     def test_email_read(self):
-        yahoo, gmail, hotmail = 3, 6, 4
-        with open(self.filename, "w") as f:
-            f.write(f"yahoo = {yahoo}\n")
-            f.write(f"gmail = {gmail}\n")
-            f.write(f"hotmail = {hotmail}\n")
-
-        with open(self.filename, "r") as f:
-            report = f.read()
-
-        self.assertEqual(report, yahoo + gmail + hotmail)
+        user_email =    """
+                        Nick Carter, ncarter@yahoo.com
+                        Vanessa Singh, vsingh@gmail.com
+                        Ann Parker, aparker@gmail.com
+                        Phil Chen, pchen@hotmail.com
+                        Fiona Smith, fsmith@gmail.com
+                        Joshue Candela, jcandela@yahoo.com
+                        Carl Peterson, cpeterson@hotmail.com
+                        Kevin Brook, kbrook@gmail.com 
+                        Theresa Ng, tng@hotmail.com
+                        Joe Hunter, jhunter@yahoo.com
+                        Patricia Franco, pfranco@gmail.com
+                        Marie Mansion, mmansion@gmail.com
+                        Carla Lee, clee@hotmail.com
+                        """
             
+        email_file = self.filename
+        report_file = "test_report.txt"
+
+        with open(email_file,"w") as f:
+            f.write(user_email)
+
+        email_read(email_file, report_file)
+
+        with open(report_file, "r") as f:
+            lines = f.read().splitlines()
+
+        expected = [
+            "yahoo = 3",
+            "gmail = 6",
+            "hotmail = 4"
+        ]
+
+        self.assertEqual(lines, expected)
+
 
 # run the unittest automatically when the file is run 
 if __name__ == "__main__":
