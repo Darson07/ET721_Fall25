@@ -1,0 +1,17 @@
+*{box-sizing: border-box;}
+img{width: 100%; display: block;}
+
+.title{
+    text-align: center;
+    color: blueviolet;
+}
+.subtitle{
+    font-style: italic;
+}
+.introimg{
+    width: 60%;
+    margin: 3rem auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px grey;
+}
