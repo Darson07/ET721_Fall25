@@ -15,3 +15,23 @@ img{width: 100%; display: block;}
     overflow: hidden;
     box-shadow: 1px 1px 5px grey;
 }
+
+.maincontainer{
+    width: 800px;
+    margin: 2rem auto;
+    background-color: aliceblue;
+    padding: 1rem;
+    border: solid 1px lightblue;
+}
+
+/* CARD */
+.card{
+    width: 200px;
+    height: 300px;
+    border: solid 1px grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card:hover{
+    border: dotted 3px blueviolet;
+}
