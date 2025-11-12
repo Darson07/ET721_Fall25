@@ -1,18 +1,15 @@
-'''
+"""
 Darson Hak
 October 22nd, 2025
 Lab 11: APIs
-'''
+"""
 
 import pandas as pd
 
 # ----------
 # 1. Example Dataframe (small APIs)
 # ----------
-dict_ = {
-    "a":[11,21,31], 
-    "b":[12,22,32]
-    }
+dict_ = {"a": [11, 21, 31], "b": [12, 22, 32]}
 
 # Create a dataframe for dict_
 df = pd.DataFrame(dict_)
@@ -37,7 +34,7 @@ df_teams = pd.DataFrame(nba_teams)
 print(f"\n{df_teams.head()}")
 
 # Find the id of the Warriors
-df_warrior = df_teams[df_teams["nickname"]=="Warriors"]
+df_warrior = df_teams[df_teams["nickname"] == "Warriors"]
 print(f"\n{df_warrior}")
 
 # Find the id of the Warriors using the information in the first column
@@ -48,7 +45,8 @@ print(f"\nWarriors ID = {warrior_id}")
 # 3. External APIs
 # ----------
 import requests
-url = "https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%205/Labs/Golden_State.pkl" 
+
+url = "https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%205/Labs/Golden_State.pkl"
 
 file_name = "Golden_State.pkl"
 
@@ -83,7 +81,7 @@ away_avg_pts = gsw_away_vs_tor["PTS"].mean()
 print(f"\nWarriors home average: {home_avg_plus}")
 print(f"Warriors away average: {away_avg_plus}")
 
-# e. Visualization 
+# e. Visualization
 import matplotlib.pyplot as plt
 
 metrics = ["PLUS_MINUS", "PTS"]
@@ -93,9 +91,21 @@ away_values = [away_avg_plus, away_avg_pts]
 x = range(len(metrics))
 bar_width = 0.35
 
-plt.figure(figsize=(8,5))
-plt.bar([i - bar_width/2 for i in x], home_values, width=bar_width, label = "Home", color = "skyblue")
-plt.bar([i + bar_width/2 for i in x], away_values, width=bar_width, label = "Away", color = "orange")
+plt.figure(figsize=(8, 5))
+plt.bar(
+    [i - bar_width / 2 for i in x],
+    home_values,
+    width=bar_width,
+    label="Home",
+    color="skyblue",
+)
+plt.bar(
+    [i + bar_width / 2 for i in x],
+    away_values,
+    width=bar_width,
+    label="Away",
+    color="orange",
+)
 plt.xticks(x, metrics)
 plt.title("Golden State Warriors vs. Raptors - Home vs Away Comparison")
 plt.ylabel("Average value")

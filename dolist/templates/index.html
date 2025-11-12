@@ -1,0 +1,40 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 15, Darson Hak</title>
+    <link rel="stylesheet" href="{% static 'doliststyle.css' %}">
+</head>
+<body>
+    <main class="maincontainer">
+        <h1 class="apptitle">To do list by Darson Hak</h1>
+
+        <form class="dolistform">
+            <section class="formgroup">
+                <label for="task">What to do? ...</label>
+                <input type="text" id="task" class="todo_text" placeholder="Type your task"/>
+                <button class="btnaddlist">Add to list</button>
+            </section>
+            
+            <section class="formgroup">
+                <button class="btndeleteeach">DELETE COMPELTED</button>
+                <button class="btndeleteall">DELETE ALL</button>
+            </section>
+                
+            <section class="formgroup">
+                <h3>Added to the list:</h3>
+                <ul class="dolist_list">
+                    <li>Complete lab 15</li>
+                </ul>
+            </section>
+        </form>
+
+
+
+
+    </main>
+
+</body>
+</html>

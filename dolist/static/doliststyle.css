@@ -1,0 +1,48 @@
+*{box-sizing: border-box;}
+img{width: 100%; display: block;}
+.maincontainer{
+    width: 800px;
+    background-color: aliceblue;
+    margin: 5rem auto;
+    padding: 2rem;
+}
+.apptitle{
+    text-align: center;
+}
+.dolistform, .formgroup{
+    margin-top: 2rem;
+}
+.todo_text{
+    background-color: white; padding: 0.5rem;
+    width: 60%;
+}
+.btndeleteeach, .btndeleteall{
+    width: 40%;
+    margin: 2%;
+    padding: 0.5rem;
+    border: none;
+}
+.btndeleteeach{
+    background-color: orange;
+}
+.btndeleteall{
+    background-color: rgb(201, 120, 21);
+}
+.btndeleteeach:hover, .btndeleteall:hover, .btnaddlist:hover{
+    background-color: darkred;
+    color: white;
+}
+.btnaddlist{
+    border: none;
+    background-color: green;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+.dolist_list{
+    background-color: white;
+    padding: 1rem;
+    border: solid grey 1px;
+}
+.dolist_list li{
+    list-style: none;
+}
