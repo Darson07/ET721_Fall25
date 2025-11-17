@@ -43,6 +43,13 @@ img{width: 100%; display: block;}
     padding: 1rem;
     border: solid grey 1px;
 }
-.dolist_list li{
+.listitem{
     list-style: none;
+    padding: 1rem;
+    background-color: rgb(230,230,230);
+}
+.completed{
+    color:whitesmoke;
+    text-decoration: line-through;
+    background-color: rgb(50,50,50);
 }
