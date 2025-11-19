@@ -53,3 +53,11 @@ img{width: 100%; display: block;}
     text-decoration: line-through;
     background-color: rgb(50,50,50);
 }
+.linkitem{
+    text-decoration: none;
+    color: rgb(50,50,50);
+}
+.linkitem:hover{
+    text-decoration: underline;
+    font-weight: bolder;
+}
