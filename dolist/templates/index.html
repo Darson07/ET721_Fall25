@@ -12,7 +12,7 @@
         <h1 class="apptitle">To do list by Darson Hak</h1>
 
         <form class="dolistform" action="{% url 'add' %}" method="post" role="form">
-            {% csrt_token %}
+            {% csrf_token %}
             <section class="formgroup">
                 <label for="task">What to do? ...</label>
                 {{form.text}}
