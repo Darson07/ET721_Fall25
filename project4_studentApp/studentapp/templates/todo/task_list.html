@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My To-Do List</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Task</button>
+</form>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }} ({{ task.category }})
+            {% if task.completed %} ✅ {% endif %}
+
+            <!-- Edit & Delete links -->
+            <a href="{% url 'task_update' task.pk %}">Edit</a> |
+            <a href="{% url 'task_delete' task.pk %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No tasks yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
